@@ -64,3 +64,5 @@ PROJECT_SETUP_SUMMARY.md
 
 # Session handoff notes. Local working memory, not part of the project record.
 docs/handoff.md
+
+*.zip
