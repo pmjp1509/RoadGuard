@@ -22,12 +22,12 @@ data/processed/
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
-# Models & Weights (MUST IGNORE)
-models/weights/*
-!models/weights/.gitkeep
-*.pt
-*.pth
-*.onnx
+# # Models & Weights (MUST IGNORE)
+# models/weights/*
+# !models/weights/.gitkeep
+# *.pt
+# *.pth
+# *.onnx
 
 # Application Outputs & Logs
 *.log
