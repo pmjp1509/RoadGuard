@@ -1,0 +1,37 @@
+# Training output. 7.7 GB, and the weights the app needs are fetched from the Hub.
+runs/
+models/weights/
+*.pt
+*.pth
+*.onnx
+
+# Datasets and generated output
+data/
+reports/
+notebooks/
+test_3d_outputs/
+
+# Dataset preparation and training code, not used at runtime
+scripts/archive/
+models/training/
+src/dataset/
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+*.egg-info/
+
+# Local and editor state
+.git/
+.github/
+.vscode/
+.idea/
+.streamlit/secrets.toml
+.env
+.env.local
+*.log
+logs/
+tmp_*

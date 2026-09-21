@@ -1,0 +1,66 @@
+# Python libraries and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# Data & Datasets (MUST IGNORE)
+data/raw/
+data/processed/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Models & Weights (MUST IGNORE)
+models/weights/*
+!models/weights/.gitkeep
+*.pt
+*.pth
+*.onnx
+
+# Application Outputs & Logs
+*.log
+logs/
+runs/
+tensorboard/
+reports/*.pdf
+data/infrasight.db
+
+# Temporary/Cache Files
+tmp_*
+.streamlit/*.toml
+!.streamlit/config.toml
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Environment & Secrets
+.env
+.env.local
+.streamlit/secrets.toml
+
+# Scratch test output, not the test suite. The pattern is anchored to the repo root so
+# it catches throwaway probes left lying around without swallowing tests/.
+test_3d_outputs/
+/test_*.html
+/test_*.py
+PROJECT_SETUP_SUMMARY.md
+
+# Session handoff notes. Local working memory, not part of the project record.
+docs/handoff.md

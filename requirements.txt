@@ -1,0 +1,58 @@
+# InfraSight runtime dependencies, pinned to the versions the app was verified against.
+#
+# PyTorch is listed without a build suffix so the same file works for both targets:
+#   GPU (local):  pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124
+#   CPU (deploy): pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cpu
+# Install torch first from the right index, then the rest with: pip install -r requirements.txt
+
+# Deep learning
+torch==2.6.0
+torchvision==0.21.0
+ultralytics==8.4.14
+transformers==4.57.3
+timm==1.0.24
+
+# Computer vision
+# ultralytics hard-depends on opencv-python, the GUI build, so that is what the image
+# gets and the Dockerfile installs libgl1 for it. Pinning opencv-python-headless
+# alongside it installed both: the GUI wheel won the shared `cv2` directory anyway and
+# the pair cost 154 MB of duplicated shared libraries.
+# The version is pinned because opencv-python 4.12 and later require numpy 2, which
+# conflicts with the numpy pin below. Left unpinned, pip backtracks through every 4.12
+# and later wheel before landing here, which makes the build slow and the result
+# whatever pip happened to settle on.
+opencv-python==4.11.0.86
+
+# Numerical
+numpy==1.26.4
+scipy==1.15.3
+
+# Storage and reporting
+sqlalchemy==2.0.46
+pandas==2.3.3
+fpdf2==2.8.7
+
+# Visualization
+plotly==6.5.2
+
+# Web interface
+streamlit==1.54.0
+streamlit-folium==0.26.1
+folium==0.20.0
+
+# GPS
+geopy==2.4.1
+
+# Model weight download
+huggingface-hub==0.36.0
+
+# Utilities
+pyyaml==6.0.3
+pillow==12.3.0
+tqdm==4.67.1
+python-dotenv==1.0.1
+
+# Dataset preparation and training are not needed to run the app.
+# Those scripts live in scripts/archive/ and models/training/ and additionally need:
+#   roboflow==1.2.13
+#   dataset-tools
